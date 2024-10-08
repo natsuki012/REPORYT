@@ -135,8 +135,8 @@ function updateSummary() {
         return total + expense.routes.reduce((sum, route) => sum + (route.cost || 0), 0);
     }, 0);
 
-    document.getElementById('totalExpense').textContent = `$${totalExpense.toFixed(2)}`;
-    document.getElementById('totalTransportation').textContent = `$${totalTransportation.toFixed(2)}`;
+    document.getElementById('totalExpense').textContent = `${totalExpense.toFixed(2)}`;
+    document.getElementById('totalTransportation').textContent = `${totalTransportation.toFixed(2)}`;
 
     updateTextSummary();
 }
@@ -148,7 +148,7 @@ function updateTextSummary() {
         summary += `第 ${index + 1} 天 (${expense.date})：\n`;
         summary += `路線：\n`;
         expense.routes.forEach((route, routeIndex) => {
-            summary += `  ${routeIndex + 1}. ${route.from} 到 ${route.to}：$${route.cost}\n`;
+            summary += `  ${routeIndex + 1}. ${route.from} 到 ${route.to}：${route.cost}\n`;
         });
         summary += `飯店：${expense.hotelName}，費用：${expense.hotelCost}\n`;
         summary += `收據：${expense.hasReceipt ? `有 (${expense.receiptCount} 張)` : '無'}\n\n`;
