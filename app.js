@@ -150,12 +150,12 @@ function updateTextSummary() {
         expense.routes.forEach((route, routeIndex) => {
             summary += `  ${routeIndex + 1}. ${route.from} 到 ${route.to}：$${route.cost}\n`;
         });
-        summary += `飯店：${expense.hotelName}，費用：$${expense.hotelCost}\n`;
+        summary += `飯店：${expense.hotelName}，費用：${expense.hotelCost}\n`;
         summary += `收據：${expense.hasReceipt ? `有 (${expense.receiptCount} 張)` : '無'}\n\n`;
     });
 
-    summary += `總費用：$${document.getElementById('totalExpense').textContent}\n`;
-    summary += `總交通費用：$${document.getElementById('totalTransportation').textContent}\n`;
+    summary += `總費用：${document.getElementById('totalExpense').textContent}\n`;
+    summary += `總交通費用：${document.getElementById('totalTransportation').textContent}\n`;
 
     document.getElementById('textSummaryContent').textContent = summary;
 }
